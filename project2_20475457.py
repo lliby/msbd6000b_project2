@@ -133,21 +133,21 @@ for i in range(200):
 # Validation
 
 f = open(test_data_dir)
-paths = f.readlines()
+paths2 = f.readlines()
 f.close()
 
 labels = []
-images = []
-for line in paths:
+images2 = []
+for line in paths2:
     im = line
-    images.append(im)
+    images2.append(im.rstrip())
 
-image_val = []
-for v in images:
-    image_val.append(skimage.data.imread(v))
+image_val2 = []
+for v2 in images2:
+    image_val2.append(skimage.data.imread(v2))
 
 # Resize val images
-image_val32 = [skimage.transform.resize(image, (32, 32)) for image in image_val]
+image_val32 = [skimage.transform.resize(image, (32, 32)) for image in image_val2]
 #display_images_and_labels(image_val64, label_val)
 
 # Run the "predicted_labels" op.
